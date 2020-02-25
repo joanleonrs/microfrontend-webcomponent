@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CoreComponent } from './pages/core.component';
 import { EmptyComponent } from './pages/empty.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './pages/home.component';
 
 @NgModule({
@@ -17,7 +16,7 @@ import { HomeComponent } from './pages/home.component';
     EmptyComponent,
     HomeComponent
   ],
-  imports: [BrowserModule, MDBBootstrapModule.forRoot(), HttpClientModule, RouterModule.forRoot([
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot([
     { path: 'home', component: CoreComponent, children: [
       { path: '', component: HomeComponent }
     ]},

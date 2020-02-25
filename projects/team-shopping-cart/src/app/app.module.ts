@@ -10,7 +10,6 @@ import { EmptyComponent } from './pages/empty.component';
 import { Page2Component } from './pages/page2.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { EventEmiterService } from './event.emmiter.service';
-import { MDBBootstrapModule } from "angular-bootstrap-md";
 
 @NgModule({
   declarations: [
@@ -20,10 +19,9 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
     CartComponent,
     Page2Component
     ],
-  imports: [BrowserModule, HttpClientModule,
-    MDBBootstrapModule.forRoot(), RouterModule.forRoot([
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot([
     { path: 'shopping-cart', component: CoreComponent, children: [
-      { path: 'cart', component: CartComponent }, 
+      { path: 'cart', component: CartComponent },
       { path: 'page2', component: Page2Component }
     ]},
     { path: '**', component: EmptyComponent }

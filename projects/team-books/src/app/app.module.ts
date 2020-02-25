@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { CoreComponent } from './pages/core.component';
 import { EmptyComponent } from './pages/empty.component';
 import { Page2Component } from './pages/page2.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BookListingService } from './service/book-listing.service';
 import { BookListingComponent } from './pages/book-listing/book-listing.component';
 import { BookcardComponent } from './components/bookcard/bookcard.component';
@@ -22,9 +21,9 @@ import { BookcardComponent } from './components/bookcard/bookcard.component';
     BookListingComponent,
     BookcardComponent
     ],
-  imports: [BrowserModule, MDBBootstrapModule.forRoot(), HttpClientModule, RouterModule.forRoot([
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot([
     { path: 'books', component: CoreComponent, children: [
-      { path: 'book', component: BookListingComponent }, 
+      { path: 'book', component: BookListingComponent },
       { path: 'page2', component: Page2Component }
     ]},
     { path: '**', component: EmptyComponent }

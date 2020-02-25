@@ -11,19 +11,19 @@ import { EventEmiterService } from './event.emmiter.service';
 })
 export class AppComponent {
 
-  @Input('state') 
+  @Input('state')
   set state(state: string) {
       this.eventEmiter.sendMessage(state);
   }
 
   @Output() message = new EventEmitter<any>();
-  
+
   constructor(private router: Router, private eventEmiter: EventEmiterService) {}
 
   ngOnInit() {
 
     this.router.initialNavigation();
-    
+
     //this.router.navigate(['/shopping-cart/cart']);
 
   }

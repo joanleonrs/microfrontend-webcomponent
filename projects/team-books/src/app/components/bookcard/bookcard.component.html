@@ -8,7 +8,7 @@
         <div class="view overlay hm-white-slight">
           <img [src]="book.image" class="img-fluid" alt="" width="360px" height="340px" style="height:230px">
           <a>
-            <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+            <div class="mask waves-effect waves-light"></div>
           </a>
         </div>
       </a>
@@ -32,10 +32,7 @@
         <div class="card-footer">
           <span class="left">$ {{book.price}} </span>
           <span class="right">
-            <a placement="top" mdbTooltip="Add to Cart" container="body" (click) = "addButtonClicked($event)">
-              <i class="fa fa-shopping-cart" ></i>
-            </a>
-
+              <button class="btn btn-primary" (click)="addButtonClicked($event)">Add to cart</button>
           </span>
         </div>
 
