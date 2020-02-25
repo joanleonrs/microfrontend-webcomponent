@@ -1,7 +1,7 @@
 import {Injectable, EventEmitter} from '@angular/core';
 
 @Injectable()
-  
+
 export class EventEmiterService {
 
   data = new EventEmitter();
@@ -14,8 +14,7 @@ export class EventEmiterService {
     this.data.emit(data);
   }
 
-  getData()
-  {
+  getData() {
     return this.cart;
   }
 }

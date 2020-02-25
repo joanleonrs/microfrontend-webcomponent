@@ -14,8 +14,7 @@ export class BookcardComponent implements OnInit {
 
   ngOnInit() {}
 
-  addButtonClicked(event: any)
-  {
+  addButtonClicked(event: any){
     this.message.emit(this.book);
     //alert(event.target.value + this.movie.title );
   }

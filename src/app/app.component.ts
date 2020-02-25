@@ -20,10 +20,12 @@ export class AppComponent {
   title = "microfrontend-webcomponent";
   cartLength: any;
 
-  constructor(private eventBus: EventBusService, private location: Location) {}
+  constructor (
+    private eventBus: EventBusService,
+    private location: Location) {}
 
   config = {
-    books: {
+    "books": {
       loaded: false,
       path: "team-books/books.js",
       element: "team-books",
@@ -39,11 +41,12 @@ export class AppComponent {
 
   ngOnInit() {
     this.cartLength = 0;
-    this.load("books");
-    this.load("shopping-cart");
+    this.loadBundle("books");
+    this.loadBundle("shopping-cart");
   }
 
-  load(name: string): void {
+  loadBundle(name: string): void {
+
     const configItem = this.config[name];
     if (configItem.loaded) return;
 
@@ -67,24 +70,29 @@ export class AppComponent {
   }
 
   toggleApp(appName) {
+
+    console.log("TCL: AppComponent -> toggleApp -> appName", appName)
+
     const appNameLC = appName.split("/")[0];
-    const path = appName;
+    // const path = appName;
     const configItem: any = this.config[appNameLC];
     //this.location.go(`#/${path}/`);
+    console.log("TCL: AppComponent -> toggleApp -> configItem.loaded", configItem.loaded)
     if (configItem.loaded) {
       //this.location.replaceState(`/${path}/`);
       //this.location.go(`#/${path}/`);
       //this.router.navigateByUrl(`/${path}/`)
       //this.router.routerLink
     } else {
-      this.load(appNameLC);
+      this.loadBundle(appNameLC);
     }
   }
 
   handleMessage(msg): void {
-    alert('shell received message: ' + msg.detail.title);//
+    // alert('shell received message: ' + msg.detail.title);
     this.cartLength++;
     this.eventBus.setState(msg.detail.imageUrl + " || " + msg.detail.title + " || "+ msg.detail.price);
     console.log('shell received message: ', msg.detail);
   }
+
 }

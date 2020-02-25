@@ -15,22 +15,16 @@ Component,OnInit, Input, Output, EventEmitter,} from "@angular/core";
    @Output()
    appToToggle = new EventEmitter();
 
-    constructor(
-    ) {
-      // console.log(translate.data);
-    }
+    constructor() {}
 
     ngOnInit() { }
 
-    menuClicked($event)
-    {
+    menuClicked($event){
       //const appName = String($event.currentTarget.value).trim();
-      if(this.counter > 4)
-      {
+      if(this.counter > 4){
         this.appToToggle.emit('books/book');
         return "#/books/book";
-      }
-      else
+      } else
       {
         this.counter++;
       }

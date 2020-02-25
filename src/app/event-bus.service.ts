@@ -8,9 +8,9 @@ export class EventBusService {
 
     private state$ = new Subject();
     private clients: HTMLElement[] = [];
-    private listners: Array<any> = [];
+    private listeners: Array<any> = [];
 
-    public registerClient(client: HTMLElement, listners:Array<any>) {
+    public registerClient(client: HTMLElement, listeners:Array<any>) {
         this.clients.push(client);
     }
 
@@ -20,12 +20,11 @@ export class EventBusService {
         }
     }
 
-    public broadcast(state)
-    {
-        // iterate over client listners and publish the msg
-        for(let client of this.listners) {
-            client.setAttribute('state', state);
-        }
-    }
+    // public broadcast(state){
+    //     // Iterar sobre los client listeners y publicar el msg
+    //     for(let client of this.listeners) {
+    //         client.setAttribute('state', state);
+    //     }
+    // }
 
 }
