@@ -10,14 +10,14 @@ import { EventEmiterService } from './service/event.emmiter.service';
 export class AppComponent {
 
   title = 'team-books';
-  
-  @Input('state') 
+
+  @Input('state')
   set state(state: string) {
       //alert('Book received new state: '+ state);
   }
 
   @Output() message = new EventEmitter<any>();
-  
+
   constructor(private router: Router, private eventEmiter: EventEmiterService) {}
 
   ngOnInit() {
@@ -29,8 +29,8 @@ export class AppComponent {
     })
 
     this.router.initialNavigation();
-    
-    //this.router.navigate(['/books/book']);
-  
+
+    this.router.navigate(['/books/book']);
+
   }
 }

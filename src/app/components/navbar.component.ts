@@ -1,6 +1,6 @@
 import {
 Component,OnInit, Input, Output, EventEmitter,} from "@angular/core";
-   
+
   @Component({
     selector: "app-navbar",
     templateUrl: "./navbar.component.html"
@@ -9,7 +9,7 @@ Component,OnInit, Input, Output, EventEmitter,} from "@angular/core";
   export class NavbarComponent implements OnInit {
    @Input()
    noOfItemsInCart;
-  
+
    counter =0;
 
    @Output()
@@ -19,7 +19,7 @@ Component,OnInit, Input, Output, EventEmitter,} from "@angular/core";
     ) {
       // console.log(translate.data);
     }
-  
+
     ngOnInit() { }
 
     menuClicked($event)
@@ -27,8 +27,8 @@ Component,OnInit, Input, Output, EventEmitter,} from "@angular/core";
       //const appName = String($event.currentTarget.value).trim();
       if(this.counter > 4)
       {
-        this.appToToggle.emit('movies/movie');
-        return "#/movies/movie";
+        this.appToToggle.emit('books/book');
+        return "#/books/book";
       }
       else
       {
@@ -37,7 +37,6 @@ Component,OnInit, Input, Output, EventEmitter,} from "@angular/core";
 
     }
 
-   
-   
+
+
   }
-  

@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const concat = require('concat');
 (async function build() {
-  
+
   const teamHomeFiles = [
     './dist/microfrontend-webcomponent/team-home/runtime.js',
     //'./dist/microfrontend-webcomponent/team-home/polyfills-es2015.js',
@@ -13,19 +13,7 @@ const concat = require('concat');
   //await fs.copyFile('./dist/microfrontend-webcomponent/team-home/styles.css', './dist/microfrontend-webcomponent/team-home/styles.css')
   //await fs.copy('./dist/microfrontend-webcomponent/team-home/assets/', 'sub-project-a/assets/' )
 
-  
-  const teamMoviesFiles = [
-    './dist/microfrontend-webcomponent/team-movies/runtime.js',
-    //'./dist/microfrontend-webcomponent/team-movies/polyfills-es2015.js',
-    //'./dist/microfrontend-webcomponent/team-movies/scripts.js',
-    './dist/microfrontend-webcomponent/team-movies/main.js',
-  ]
-  //await fs.ensureDir('team-movies')
-  await concat(teamMoviesFiles, './dist/microfrontend-webcomponent/team-movies/movies.js');
-  //await fs.copyFile('./dist/microfrontend-webcomponent/team-movies/styles.css', './dist/microfrontend-webcomponent/team-movies/styles.css')
-  //await fs.copy('./dist/microfrontend-webcomponent/team-movies/assets/', 'sub-project-a/assets/' )
 
-  
   const teamBooksFiles = [
     './dist/microfrontend-webcomponent/team-books/runtime.js',
     //'./dist/microfrontend-webcomponent/team-books/polyfills-es2015.js',
@@ -37,7 +25,7 @@ const concat = require('concat');
   //await fs.copyFile('./dist/microfrontend-webcomponent/team-books/styles.css', './dist/microfrontend-webcomponent/team-books/styles.css')
   //await fs.copy('./dist/microfrontend-webcomponent/team-books/assets/', 'team-books/assets/' )
 
-  
+
   const teamShoppingCartFiles = [
     './dist/microfrontend-webcomponent/team-shopping-cart/runtime.js',
     //'./dist/microfrontend-webcomponent/team-shopping-cart/polyfills-es2015.js',

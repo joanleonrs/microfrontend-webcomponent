@@ -17,7 +17,6 @@ export class BookListingComponent implements OnInit {
   ngOnInit() { this.bookListingService.getBookListing().subscribe(data => {
     data.books.map(index => {
       index.rating = Math.floor(Math.random() * 10 + 1);
-      index.price = Math.floor(index.price.split("$")[1] *60);
     });
 
     this.bookList = data.books;
@@ -29,5 +28,5 @@ export class BookListingComponent implements OnInit {
     this.eventEmiter.sendMessage(book);
   }
 
-  
+
 }

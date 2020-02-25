@@ -29,12 +29,6 @@ export class AppComponent {
       element: "team-home",
       receivers: []
     },
-    movies: {
-      loaded: false,
-      path: "team-movies/movies.js",
-      element: "team-movies",
-      receivers: ["team-shopping-cart"]
-    },
     books: {
       loaded: false,
       path: "team-books/books.js",
@@ -52,7 +46,6 @@ export class AppComponent {
   ngOnInit() {
     this.cartLength = 0;
     this.load("home");
-    this.load("movies");
     this.load("books");
     this.load("shopping-cart");
   }
