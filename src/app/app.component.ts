@@ -1,11 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
+import { LocationStrategy, PathLocationStrategy, Location } from "@angular/common";
 import { EventBusService } from "./event-bus.service";
-//import { Router } from '@angular/router';
-import {
-  LocationStrategy,
-  PathLocationStrategy,
-  Location
-} from "@angular/common";
 
 @Component({
   selector: "app-root",
@@ -17,6 +12,7 @@ import {
   ]
 })
 export class AppComponent {
+
   title = "microfrontend-webcomponent";
   cartLength: any;
 
@@ -24,6 +20,7 @@ export class AppComponent {
     private eventBus: EventBusService,
     private location: Location) {}
 
+  // Config Contract
   config = {
     "books": {
       loaded: false,
@@ -59,14 +56,13 @@ export class AppComponent {
     const element: HTMLElement = document.createElement(configItem.element);
     content.appendChild(element);
 
-    //this.router.navigateByUrl(path);
-
     configItem.loaded = true;
     element.addEventListener("message", msg => this.handleMessage(msg));
-    //element.setAttribute('state', 'init');
 
     script.onerror = () => console.error(`error loading ${configItem.path}`);
+
     this.eventBus.registerClient(element, configItem.receivers);
+
   }
 
   toggleApp(appName) {
@@ -74,13 +70,12 @@ export class AppComponent {
     console.log("TCL: AppComponent -> toggleApp -> appName", appName)
 
     const appNameLC = appName.split("/")[0];
-    // const path = appName;
     const configItem: any = this.config[appNameLC];
-    //this.location.go(`#/${path}/`);
+
+    console.log("TCL: AppComponent -> toggleApp -> appNameLC", appNameLC)
     console.log("TCL: AppComponent -> toggleApp -> configItem.loaded", configItem.loaded)
+
     if (configItem.loaded) {
-      //this.location.replaceState(`/${path}/`);
-      //this.location.go(`#/${path}/`);
       //this.router.navigateByUrl(`/${path}/`)
       //this.router.routerLink
     } else {
