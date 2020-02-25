@@ -23,12 +23,6 @@ export class AppComponent {
   constructor(private eventBus: EventBusService, private location: Location) {}
 
   config = {
-    home: {
-      loaded: false,
-      path: "team-home/home.js",
-      element: "team-home",
-      receivers: []
-    },
     books: {
       loaded: false,
       path: "team-books/books.js",
@@ -45,7 +39,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.cartLength = 0;
-    this.load("home");
     this.load("books");
     this.load("shopping-cart");
   }

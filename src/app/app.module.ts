@@ -3,11 +3,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar.component';
-import { HomeComponent } from '../../projects/team-home/src/app/pages/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,NavbarComponent,HomeComponent
+    AppComponent,NavbarComponent
   ],
   imports: [BrowserModule],
   providers: [],
