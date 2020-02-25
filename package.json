@@ -7,11 +7,10 @@
     "remove-prev-dist": "rm -rf dist/*",
     "build": "npm run remove-prev-dist & npm run build:microfrontend-webcomponent && npm run build:clients && npm run custom-build",
     "custom-build": "node custom-build-script.js",
+    "build:microfrontend-webcomponent": "ng build --project microfrontend-webcomponent",
     "build:clients": "npm run build:team-books && npm run build:team-shopping-cart",
     "build:team-books": "ng build --prod --project team-books --output-hashing none --vendor-chunk false --output-path dist/microfrontend-webcomponent/team-books",
     "build:team-shopping-cart": "ng build --prod --project team-shopping-cart --output-hashing none --vendor-chunk false --output-path dist/microfrontend-webcomponent/team-shopping-cart",
-    "build:microfrontend-webcomponent": "ng build --project microfrontend-webcomponent",
-    "build:clients:webpack:old-solution": "webpack",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
